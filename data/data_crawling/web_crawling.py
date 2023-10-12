@@ -20,7 +20,7 @@ for line in all_hrefs:
     for url in category_list:
         response = requests.get(url)
         newsoup = BeautifulSoup(response.content, 'html.parser')
-        title = newsoup.find('span', attrs={'class':'media_end_head_headline'})
+        title = newsoup.find('h2', attrs={'class':'media_end_head_headline'})
         article = newsoup.find('article', attrs={'class': 'go_trans _article_content'})
         category = idx2word[str(url[-3:])]
 
